@@ -1,0 +1,44 @@
+spring:
+  mvc:
+    servlet:
+      path: /practice
+      load-on-startup: 1
+  # 如果不配置的话，默认数据源为：com.zaxxer.hikari.HikariDataSource
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${dbIp}:3306/spring?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: ${dbUser}
+    password: ${dbUserPassword}
+
+server:
+  port: 9999
+logging:
+  #filepathfile
+  #10bps.log.2019-08-03.69.gz
+  #file: "${catalina.base}/logs/bps.log"
+  pattern:
+    #
+    file: "%d{ISO8601} [%-5level] [%thread] |%L|%-40.40logger{0}---%msg%n"
+    console: "%d{ISO8601} [%-5level] [%thread] |%L|%-40.40logger{0}---%msg%n"
+  level:
+    #logger
+    root : info
+    com.jessin.springboot.demo.controller.HelloController: debug
+  logback:
+    rollingpolicy:
+      max-history: 10
+      max-file-size: 1GB
+  file:
+    path: "/home/jessin/logs"
+management:
+  endpoints:
+    web:
+      #      base-path: /hello
+      exposure:
+        #15endpointendpointhealthinfo
+        #http://localhost:9999/practice/actuator
+        include: "*"
+#  server:
+#    port: 8888
+mybatis:
+  mapper-locations: "classpath:mappers/*Mapper.xml"
