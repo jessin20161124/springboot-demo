@@ -15,7 +15,7 @@ server:
   tomcat:
     accesslog:
       enabled: true
-
+      directory: /Users/jessin/Documents/program/java/springboot-demo
 logging:
   #filepathfile
   #10bps.log.2019-08-03.69.gz
