@@ -1,13 +1,14 @@
 package com.jessin.springboot.demo;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
-@SpringBootTest
-class DemoApplicationTests {
+@Slf4j
+public class DemoApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+
     }
 
 }
