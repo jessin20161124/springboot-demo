@@ -26,7 +26,7 @@ logging:
     console: "%d{ISO8601} [%-5level] [%thread] |%L|%-40.40logger{0}---%msg%n"
   level:
     #logger
-    root : info
+    root : INFO
     com.jessin.springboot.demo.controller.HelloController: debug
     # 会转化为system properties，最终设置到spring boot默认的配置文件中
   logback:
